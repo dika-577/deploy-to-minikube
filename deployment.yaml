@@ -1,26 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    app: helloweb
   name: helloweb
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: helloweb
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: helloweb
     spec:
       containers:
-      - image: us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0
-        name: hello-app
+      - name: hello-app
+        image: us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0
         ports:
         - containerPort: 8080
-        resources: {}
-status: {}
+       
