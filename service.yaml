@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloweb
+spec:
+  selector:
+    app: helloweb
+  ports:
+  - name: http
+    port: 85
+    targetPort: 8080
+  type: NodePort
