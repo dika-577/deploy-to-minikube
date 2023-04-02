@@ -25,7 +25,7 @@ pipeline {
             steps {
                 withKubeConfig([credentialsId: 'config_4', contextName: 'minikube']) {
                     script {
-                        ip = "192.168.49.2"
+                        def ip = sh(returnStdout: true, script: "kubectl get node -o wide | awk 'NR==2 {print $6}'").trim()
                         def port = sh(returnStdout: true, script: "kubectl get service helloweb -o=jsonpath='{.spec.ports[0].nodePort}'").trim()
                         sh "kubectl rollout status deployment/helloweb"
                         sh "curl --fail --silent --show-error http://${ip}:${port}"
