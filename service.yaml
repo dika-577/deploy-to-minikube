@@ -11,28 +11,5 @@ spec:
     targetPort: 8080
   type: NodePort
   
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nginx
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  defaultBackend:
-    service:
-      name: helloweb
-      port:
-        number: 85
-  rules:
-    - host: localhost
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: helloweb
-                port:
-                  number: 85
+
 
