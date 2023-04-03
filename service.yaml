@@ -25,7 +25,7 @@ spec:
       port:
         number: 85
   rules:
-    - host: "localhost:85"
+    - host: localhost
       http:
         paths:
           - path: /
