@@ -9,7 +9,7 @@ pipeline {
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [],
                     submoduleCfg: [],
-                    userRemoteConfigs: [[url: 'https://github.com/dika-577/chatgpt.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/dika-577/deploy-to-minikube.git']]
                 ])
             }
         }
